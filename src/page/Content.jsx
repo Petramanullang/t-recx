@@ -1,15 +1,7 @@
-import Navbar from "../components/layouts/Navbar";
-
-export default function About() {
+export default function Content() {
 return (
     // Kontainer Utama: relative, agar konten di dalamnya bisa diatur
     <div className="relative min-h-screen">
-
-        <img 
-            src="/images/background_about.png" // Path public/
-            alt="Latar Belakang Halaman" 
-            className="absolute inset-0 w-full h-full object-cover z-0" 
-        />
         <div className="relative z-10">
             
 
@@ -17,12 +9,8 @@ return (
                         md:pt-16 md:pb-24 lg:pt-20 lg:pb-32 h-96"> 
                 
                 <h1 className="text-6xl font-extrabold text-black">
-                    Tentang Kami
+                        Ini halaman Konten
                 </h1>
-
-                <p className="mt-4 text-xl text-white/90">
-                    Kami berdedikasi untuk memberikan solusi terbaik.
-                </p>
 
             </div>
 

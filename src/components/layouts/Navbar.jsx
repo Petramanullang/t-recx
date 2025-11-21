@@ -1,5 +1,4 @@
 // src/components/layouts/Navbar.jsx
-
 import React, { useState } from 'react';
 
 const Navbar = () => {
@@ -15,14 +14,20 @@ const Navbar = () => {
   ];
 
   return (
-    <header className="bg-black/30 shadow-sm backdrop-blur-lg">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
-          
-          {/* Logo atau Nama Situs */}
-          <div className="flex-shrink-0">
-            <a href="#" className="text-2xl font-extrabold text-indigo-600">
-              App Logo
+    <header className="bg-black/30 shadow-sm backdrop-blur-lg ">
+      <div className="px-2 sm:px-3 lg:px-4">
+        <div className="flex justify-between items-center h-16 ">
+
+
+          <div className="flex-shrink-0 flex justify-between items-center">
+            <a href="#" className="font-semibold text-white flex items-center space-x-2">
+              <img
+                src="/icons/logo.png"
+                alt=""
+                // Menggunakan sintaks [ukuran]
+                className='w-[75px] h-[70px]'
+              />
+              <span className='text-3xl'>t-Recx</span>
             </a>
           </div>
 
@@ -32,7 +37,7 @@ const Navbar = () => {
               {navLinks.map((link) => (
                 <a
                   key={link.title}
-                  href="#" 
+                  href="#"
                   className="text-gray-600 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium transition duration-150"
                 >
                   {link.title}
@@ -72,17 +77,17 @@ const Navbar = () => {
               key={link.title}
               href="#"
               className="text-gray-700 hover:bg-indigo-50 hover:text-indigo-600 block px-3 py-2 rounded-md text-base font-medium transition duration-150"
-              onClick={() => setIsOpen(false)} 
+              onClick={() => setIsOpen(false)}
             >
               {link.title}
             </a>
           ))}
           <a
-             href="#"
-             className="text-white bg-indigo-600 hover:bg-indigo-700 block px-3 py-2 rounded-md text-base font-medium text-center mt-2"
-             onClick={() => setIsOpen(false)}
+            href="#"
+            className="text-white bg-indigo-600 hover:bg-indigo-700 block px-3 py-2 rounded-md text-base font-medium text-center mt-2"
+            onClick={() => setIsOpen(false)}
           >
-             Daftar Sekarang
+            Daftar Sekarang
           </a>
         </div>
       </div>
