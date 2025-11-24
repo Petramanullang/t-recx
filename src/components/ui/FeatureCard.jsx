@@ -4,7 +4,9 @@ import React from 'react';
 const FeatureCard = ({ iconPlaceholder, title, description }) => {
   return (
 
-    <div className="bg-[#56877E] " style={{  borderRadius: '10px', width: '390px', height: '154px', marginLeft: '150px', }}>
+    // <div className="bg-[#56877E] " style={{  borderRadius: '10px', width: '390px', height: '154px', marginLeft: '150px', }}>
+    <div className="bg-[#56877E]" style={{  borderRadius: '25px', width: '390px', height: '154px', marginLeft: '40px', }}>
+
       <div className="flex  items-center">
         
         <div className="text-white text-5xl  p-3"> 
