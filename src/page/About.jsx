@@ -1,5 +1,6 @@
 import FeatureCard from '../components/ui/FeatureCard';
 import React from 'react';
+import TeamMemberCard from '../components/ui/TeamMemberCard';
 
 const featuresData = [
     {
@@ -17,6 +18,11 @@ const featuresData = [
         title: 'Kreatif',
         description: 'Ubah limbah jadi karya bernilai untung dan berdampak positif.',
     },
+];
+const teamMembersData = [
+  { name: 'Petra Julliansen Manullang', imageSrc: '/images/petra.png' },
+  { name: 'Nafillah Izzah Syafitri W.', imageSrc: '/images/izzah.png' },
+  { name: 'Muhammad Arreysyahri A.', imageSrc: '/images/rei.png' },
 ];
 export default function About() {
     return (
@@ -100,32 +106,27 @@ export default function About() {
 
                 </div>
             </div>
-            <div className='flex mb-16'>
-                <div className="mt-36 justify-around items-center mt-16 display: flex  mx-64">
+            <div className="mt-30 flex justify-end items-center mx-70">
+                <p className='text-[45px] font-bold'>Anggota Tim t-Recx</p>
+            </div>
+            <div className='flex '>
+                <div className="justify-around items-center display: flex  mx-64">
                     <div className='mb-9'>
                         <h3 className="text-4xl font-bold text-black mb-3">Mengapa Kami?</h3>
                         <h3 className="text-2xl font-medium text-[#757575]">“Karena t-Recx bukan sekadar situs informasi, tapi <br /> sebuah gerakan digital yang mengajak semua orang <br />untuk memilah, mendaur ulang, dan mencintai bumi <br />dengan cara yang seru dan mudah.</h3>
                     </div>
                 </div>
-                <div className='flex gap-25 mt-40' style={{ marginLeft: '-70px', }}>
-                    <div className="w-[208px] h-[247px] flex-shrink-0" style={{ marginLeft: '-70px', }}>
-                        <div className="w-full h-full rounded-2xl overflow-hidden shadow-xl bg-red-500"> {/* Tambahkan bg-red-500 di sini */}
-                        </div>
+                <div className='flex gap-10' style={{ marginLeft: '-70px', }}>
+                    {teamMembersData.map((member, index) => (
+                    <div key={index} className="">
+                        <TeamMemberCard 
+                            name={member.name}
+                            imageSrc={member.imageSrc}
+                        />
                     </div>
-
-                    <div className="w-[208px] h-[247px] flex-shrink-0" style={{ marginLeft: '-70px', }}>
-                        <div className="w-full h-full rounded-2xl overflow-hidden shadow-xl bg-red-500"> {/* Tambahkan bg-red-500 di sini */}
-                        </div>
-                    </div>
-
-                    <div className="w-[208px] h-[247px] flex-shrink-0" style={{ marginLeft: '-70px', }}>
-                        <div className="w-full h-full rounded-2xl overflow-hidden shadow-xl bg-red-500"> {/* Tambahkan bg-red-500 di sini */}
-                        </div>
-                    </div>
+                     ))}
                 </div>
-
             </div>
-
 
 
         </div>
