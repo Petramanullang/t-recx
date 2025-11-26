@@ -3,26 +3,30 @@ import { Link } from "react-router-dom";
 
 export default function Content() {
   return (
-    <div className="relative h-[500px] ">
-      <div className="flex justify-center items-center ">
-        <h1 className="text-7xl font-bold text-[#121F0B]">Konten t-Recx</h1>
-        <img
-          src="/icons/logo_about.png"
-          alt="Latar Belakang Halaman"
-          className="h-100 ml-4"
-        />
-      </div>
-      <div className="mb-16 flex justify-center items-center ">
-        <h3 className="text-2xl font-normal text-[#121F0B]">
-          Kami mengembangkan platform edukasi digital yang mengajarkan
-          masyarakat untuk :
-        </h3>
+    <div>
+      <div className="relative h-[500px]">
+        <div className="flex justify-center items-center pt-26">
+          <h1 className="text-7xl font-bold text-text-primary">
+            Konten t-Recx
+          </h1>
+          <img
+            src="/icons/logo_about.png"
+            alt="Latar Belakang Halaman"
+            className="h-[265px] ml-4"
+          />
+        </div>
+        <div className="mb-16 flex justify-center items-center ">
+          <h3 className="text-2xl font-normal text-text-primary">
+            Kami mengembangkan platform edukasi digital yang mengajarkan
+            masyarakat untuk :
+          </h3>
+        </div>
       </div>
 
       <div className="justify-center items-center display: flex gap-25">
         <Link
           to="/content/jenis-sampah"
-          className="group bg-[#8EC291] hover:bg-[#3E7F61] duration-200"
+          className="group bg-text-title hover:bg-[#3E7F61] duration-200"
           style={{
             borderRadius: "25px",
             width: "386px",
@@ -51,7 +55,7 @@ export default function Content() {
           </div>
         </Link>
         <div
-          className="group bg-[#8EC291] hover:bg-[#3E7F61] duration-200"
+          className="group bg-text-title hover:bg-[#3E7F61] duration-200"
           style={{ borderRadius: "25px", width: "386px", height: "400px" }}
         >
           <div className="justify-center items-center">
@@ -73,7 +77,7 @@ export default function Content() {
           </div>
         </div>
         <div
-          className="group bg-[#8EC291] hover:bg-[#3E7F61] duration-200"
+          className="group bg-text-title hover:bg-[#3E7F61] duration-200"
           style={{ borderRadius: "25px", width: "386px", height: "400px" }}
         >
           <div className="justify-center items-center">
