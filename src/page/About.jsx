@@ -1,20 +1,22 @@
 import FeatureCard from '../components/ui/FeatureCard';
 import React from 'react';
 import TeamMemberCard from '../components/ui/TeamMemberCard';
+import Navbar from '../components/Navbars';
+import Footer from '../components/Footer';
 
 const featuresData = [
     {
-        icon: '🎓', // Placeholder untuk ikon edukasi
+        icon: '/icons/education.png', // Placeholder untuk ikon edukasi
         title: 'Mengedukasi',
         description: 'Belajar memilah sampah jadi hal yang ringan dan menyenangkan.',
     },
     {
-        icon: '📍', // Placeholder untuk ikon lokasi
+        icon: '/icons/point.png', // Placeholder untuk ikon lokasi
         title: 'Akses Mudah',
         description: 'Temukan bank sampah dan drop point hanya dengan satu klik.',
     },
     {
-        icon: '💡', // Placeholder untuk ikon kreatif
+        icon: '/icons/lamp.png', // Placeholder untuk ikon kreatif
         title: 'Kreatif',
         description: 'Ubah limbah jadi karya bernilai untung dan berdampak positif.',
     },
@@ -28,16 +30,16 @@ export default function About() {
     return (
         // Kontainer Utama: relative, agar konten di dalamnya bisa diatur
         <div className="relative h-[500px] ">
-
+            <Navbar />
             <img
-                src="/images/background_about.png"
+                src="/images/ttgKami.png"
                 alt="Latar Belakang Halaman"
                 className="absolute inset-0 w-full h-full object-cover z-0"
             />
 
             <div className="relative z-10 h-full flex flex-col">
                 <div className="flex-grow flex items-center justify-center">
-                    <h1 className="text-[60px] font-extrabold text-white text-center">
+                    <h1 className="text-[60px] font-extrabold text-white text-center mt-50">
                         Tentang Kami
                     </h1>
                 </div>
@@ -78,15 +80,7 @@ export default function About() {
             <div className="mt-36 justify-around items-center mt-16 display: flex  mx-70">
                 <div className="w-[681px] h-[518px] flex-shrink-0" style={{ marginLeft: '-70px', }}>
                     <div className="w-full h-full rounded-2xl overflow-hidden shadow-xl ">
-                        <iframe
-                            // iframe diatur agar mengisi penuh wrapper
-                            className="w-full h-full"
-                            src="https://youtu.be/U77req16xE4?si=oC56ttjbJrw00wxd"
-                            title="YouTube video player"
-                            frameBorder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                            allowFullScreen
-                        ></iframe>
+                        <iframe className="w-full h-full" src="https://www.youtube.com/embed/U77req16xE4?si=iWDGWJeF07kNArOA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                     </div>
                 </div>
 
@@ -128,7 +122,7 @@ export default function About() {
                 </div>
             </div>
 
-
+              <Footer />      
         </div>
     );
 }

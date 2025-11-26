@@ -35,7 +35,7 @@ export default function Navbar() {
             </NavLink>
 
             <NavLink
-              to="/konten"
+              to="/content"
               className={({ isActive }) =>
                 isActive ? activeStyle : ""
               }
@@ -44,7 +44,7 @@ export default function Navbar() {
             </NavLink>
 
             <NavLink
-              to="/hubungi"
+              to="/contact"
               className={({ isActive }) =>
                 isActive ? activeStyle : ""
               }
