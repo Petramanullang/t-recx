@@ -3,13 +3,13 @@ import React from "react";
 const ThanksContact = () => {
   return (
     <div className="my-10">
-      <div className="w-[524px] h-[458px] bg-white rounded-2xl border-2 border-[#4E9574]">
+      <div className="w-[524px] h-[458px] bg-white rounded-2xl border-2 border-bg-secondary">
         <div className="flex px-4">
           <h3 className="text-[28px] font-semibold ">Terima Kasih!</h3>
           <img
             src="/icons/logo_about.png"
             alt="T-Recx Character"
-            className="w-25 absolute top-128 right-124"
+            className="w-[87px] h-[130px] absolute translate-x-46 -translate-y-16"
           />
         </div>
         <p className="font-normal text-[18px] text-text-primary p-4">
@@ -23,13 +23,13 @@ const ThanksContact = () => {
             type="email"
             name="email"
             placeholder="Email *"
-            className="px-4 bg-white w-[492px] h-[50px] border-2 border-[#4E9574] rounded-2xl focus:outline-none focus:ring-2 focus:ring-[#4E9574] transition duration-200"
+            className="px-4 bg-white w-[492px] h-[50px] border-2 border-bg-secondary rounded-2xl focus:outline-none focus:ring-2 focus:ring-bg-secondary transition duration-200"
           />
         </div>
         <div className="flex justify-start pt-4 px-4">
           <button
             type="submit"
-            className="w-[493px] h-[53px]  bg-[#4E9574] text-white text-[25px] font-semibold rounded-[65px] 
+            className="w-[493px] h-[53px]  bg-bg-secondary text-white text-[25px] font-semibold rounded-[65px] 
                                    shadow-lg hover:bg-[#3C7359] transition duration-300"
             // Tambahkan onClick={() => alert('Ini hanya tampilan!')} jika ingin feedback klik
             onClick={(e) => {
