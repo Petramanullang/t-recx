@@ -9,7 +9,7 @@ const FeatureCard = ({ iconPlaceholder, title, description }) => {
       style={{ borderRadius: "25px", width: "390px", height: "182px" }}
     >
       <div className="flex ">
-        <div className="flex-shrink-0 w-30 flex items-start justify-center pt-9">
+        <div className="shrink-0 w-30 flex items-start justify-center pt-9">
           {" "}
           {/* Sesuaikan w-20 dan pt-2 */}
           <img
@@ -18,7 +18,7 @@ const FeatureCard = ({ iconPlaceholder, title, description }) => {
             className="w-20 " // Ukuran ikon (misalnya w-12 h-12 = 48px)
           />
         </div>
-        <div className="flex-grow pl-4">
+        <div className="grow pl-4">
           {" "}
           {/* pl-4 memberi jarak antara ikon dan teks */}
           <h3 className="text-white text-3xl font-bold mb-2 mt-2">
