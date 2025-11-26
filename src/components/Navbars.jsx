@@ -10,11 +10,7 @@ export default function Navbar() {
       <nav className="p-4 bg-transparent absolute z-50 w-full">
         <div className="container mx-auto flex items-center justify-between text-text-secondary">
           <NavLink to="/" className="font-bold">
-            <img
-              className="h-13"
-              src="/public/img/navbar/logo-color.png"
-              alt=""
-            />
+            <img className="h-13" src="/img/navbar/logo-color.png" alt="" />
           </NavLink>
 
           <div className="flex font-semibold text-[20px] gap-10 pr-20">

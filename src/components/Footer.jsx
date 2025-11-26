@@ -5,11 +5,7 @@ export default function Footer() {
     <footer className="text-text-secondary w-full mt-20 bg-bg-primary px-4 lg:pr-56 py-16 mx-auto sm:px-6 lg:px-8 z-50">
       <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
         <div>
-          <img
-            src="/public/img/logo.png"
-            className="mr-5 h-9 sm:h-13"
-            alt="logo"
-          />
+          <img src="/img/logo.png" className="mr-5 h-9 sm:h-13" alt="logo" />
           <p className="max-w-2xl mt-4 text-[15px] text-secondary font-light">
             t-Recx berterima kasih telah mengunjungi website kami. Semoga anda
             mendapatkan pengalaman dan pengetahuan yang baik setelah mengunjungi
@@ -56,7 +52,7 @@ export default function Footer() {
                 <span className="sr-only"> Instagram </span>
                 <img
                   className="h-6"
-                  src="/public/img/footer/logo-instagram.png"
+                  src="/img/footer/logo-instagram.png"
                   alt=""
                 />
               </a>
@@ -67,11 +63,7 @@ export default function Footer() {
                 rel="noreferrer"
               >
                 <span className="sr-only"> Email </span>
-                <img
-                  className="h-6"
-                  src="/public/img/footer/logo-email.png"
-                  alt=""
-                />
+                <img className="h-6" src="/img/footer/logo-email.png" alt="" />
               </a>
               <a
                 className="hover:opacity-75"
@@ -82,7 +74,7 @@ export default function Footer() {
                 <span className="sr-only"> Whatsapp </span>
                 <img
                   className="h-6"
-                  src="/public/img/footer/logo-whatsapp.png"
+                  src="/img/footer/logo-whatsapp.png"
                   alt=""
                 />
               </a>

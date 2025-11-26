@@ -19,7 +19,7 @@ export default function Home() {
     <main className="font-sans text-gray-800">
       <section className="relative h-[520px] md:h-[480px] lg:h-[560px]">
         <img
-          src="/public/img/home/bg-hero.png"
+          src="/img/home/bg-hero.png"
           alt="hero"
           className="absolute inset-0 w-full h-screen object-cover brightness-45"
         />
@@ -40,7 +40,7 @@ export default function Home() {
             </div>
             <img
               className="absolute top-0 translate-x-32 h-56"
-              src="/public/img/home/mascot-1.png"
+              src="/img/home/mascot-1.png"
               alt=""
             />
           </div>
@@ -83,7 +83,7 @@ export default function Home() {
             </div>
 
             <img
-              src="/public/img/home/gunung-sampah.png"
+              src="/img/home/gunung-sampah.png"
               alt="garbage"
               className="min-w-[812px] h-[514px] object-cover rounded-xl shadow-md -translate-y-10 z-10"
             />
@@ -93,54 +93,54 @@ export default function Home() {
           </div>
 
           {/* Right column */}
-          <div class="flex w-full ml-10 -translate-y-5 translate-x-5">
+          <div className="flex w-full ml-10 -translate-y-5 translate-x-5">
             <div className="border-l-6 border-dotted border-bg-secondary h-[60%] translate-y-3"></div>
 
-            <div class="space-y-6  pl-5">
-              <div class="relative w-full">
+            <div className="space-y-6  pl-5">
+              <div className="relative w-full">
                 <img
                   className="absolute -translate-x-10 top-2.5 z-10 -ml-3.5 h-15 w-15 p-[18px] flex justify-center rounded-full bg-bg-secondary"
-                  src="/public/svg/home/trash-outline.svg"
+                  src="/svg/home/trash-outline.svg"
                   alt=""
                 />
-                <div class="ml-6 translate-y-1">
-                  <h4 class="font-bold text-3xl">
+                <div className="ml-6 translate-y-1">
+                  <h4 className="font-bold text-3xl">
                     Sistem Pemilahan yang <br /> Buruk
                   </h4>
-                  <p class="mt-2 max-w-screen-sm text-xl text-gray-500">
+                  <p className="mt-2 max-w-screen-sm text-xl text-gray-500">
                     Sebagian besar masyarakat masih <br /> mencampur sampah
                     organik dan anorganik <br /> sehingga menyulitkan proses
                     daur ulang.
                   </p>
                 </div>
               </div>
-              <div class="relative w-full mt-10">
+              <div className="relative w-full mt-10">
                 <img
                   className="absolute -translate-x-10 top-2.5 z-10 -ml-3.5 h-15 w-15 p-[18px] flex justify-center rounded-full bg-bg-secondary"
-                  src="/public/svg/home/warning-line.svg"
+                  src="/svg/home/warning-line.svg"
                   alt=""
                 />
-                <div class="ml-6 translate-y-2">
-                  <h4 class="font-bold text-3xl">
+                <div className="ml-6 translate-y-2">
+                  <h4 className="font-bold text-3xl">
                     Minimnya Fasilitas <br /> Pengelolaan
                   </h4>
-                  <p class="mt-2 max-w-screen-sm text-xl text-gray-500">
+                  <p className="mt-2 max-w-screen-sm text-xl text-gray-500">
                     Tidak semua wilayah memiliki bank sampah <br /> atau drop
                     point yang mudah diakses.
                   </p>
                 </div>
               </div>
-              <div class="relative w-full">
+              <div className="relative w-full">
                 <img
                   className="absolute -translate-x-10 top-2.5 z-10 -ml-3.5 h-15 w-15 p-[18px] flex justify-center rounded-full bg-bg-secondary"
-                  src="/public/svg/home/solid_disease.svg"
+                  src="/svg/home/solid_disease.svg"
                   alt=""
                 />
-                <div class="ml-6 mt-10 translate-y-2">
-                  <h4 class="font-bold text-3xl">
+                <div className="ml-6 mt-10 translate-y-2">
+                  <h4 className="font-bold text-3xl">
                     Kurangnya Edukasi dan <br /> Kesadaran
                   </h4>
-                  <p class="mt-2 max-w-screen-sm text-xl text-gray-500">
+                  <p className="mt-2 max-w-screen-sm text-xl text-gray-500">
                     Sebagian besar sampah sebenarnya bisa <br /> diolah, namun
                     informasi mengenai cara <br /> pengelolaannya masih belum
                     merata.
@@ -154,7 +154,7 @@ export default function Home() {
       <div className="w-full h-[189px] bg-bg-secondary flex justify-between items-center pl-16 pr-36">
         <img
           className="translate-x-20 translate-y-3"
-          src="/public/img/home/mascot-2.png"
+          src="/img/home/mascot-2.png"
           alt=""
         />
         <p className="text-[64px] text-text-secondary font-bold -translate-x-26 translate-y-2">
@@ -186,7 +186,7 @@ export default function Home() {
 
           <div className="w-[683px] mx-auto mt-2 mb-32 rounded-[18px] border-2 border-bg-secondary p-6 bg-white shadow-md">
             <div className="flex items-center gap-6">
-              <img src="/public/img/home/progress-bar-circle.png" alt="" />
+              <img src="/img/home/progress-bar-circle.png" alt="" />
               <div>
                 <h3 className="font-bold text-5xl">20 - 40%</h3>
                 <p className="text-text-gray leading-11 my-5 text-[22px]">
@@ -195,7 +195,7 @@ export default function Home() {
               </div>
               <img
                 className="w-[133px] h-[200px]"
-                src="/public/svg/home/mascot-5.svg"
+                src="/svg/home/mascot-5.svg"
                 alt=""
               />
             </div>
@@ -254,7 +254,7 @@ export default function Home() {
         </p>
         <img
           className="right-42 translate-x-13 translate-y-2 absolute"
-          src="/public/img/home/mascot-3.png"
+          src="/img/home/mascot-3.png"
           alt=""
         />
       </div>
@@ -266,10 +266,10 @@ export default function Home() {
             height="194"
             src="https://www.youtube.com/embed/U77req16xE4?si=GOug6i8e-piX5CF5"
             title="YouTube video player"
-            frameborder="0"
+            frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerpolicy="strict-origin-when-cross-origin"
-            allowfullscreen
+            referrerPolicy="strict-origin-when-cross-origin"
+            allowFullScreen
           ></iframe>
           <p className="text-text-gray mt-5">
             Cara mengubah sampah menjadi nilai <br /> yang menghasilkan
@@ -279,7 +279,7 @@ export default function Home() {
         <div>
           <img
             className="w-[332px] h-[431px] object-cover object-left rounded-2xl"
-            src="/public/img/home/timbang-pilah-sampah.png"
+            src="/img/home/timbang-pilah-sampah.png"
             alt=""
           />
         </div>
@@ -301,7 +301,7 @@ export default function Home() {
       <div className="w-full h-[189px] flex justify-center items-center pl-16 pr-36 mt-20">
         <img
           className="translate-x-13 translate-y-2 "
-          src="/public/img/home/mascot-4.png"
+          src="/img/home/mascot-4.png"
           alt=""
         />
         <div className="mx-auto text-center">
@@ -318,7 +318,7 @@ export default function Home() {
         <div className="flex justify-between gap-8">
           <img
             className="w-[238px] h-[220px] rounded-3xl object-cover"
-            src="/public/img/home/memilah-sampah.png"
+            src="/img/home/memilah-sampah.png"
             alt=""
           />
           <div className="border-3 border-bg-secondary rounded-2xl w-full p-5">
@@ -345,7 +345,7 @@ export default function Home() {
           </div>
           <img
             className="w-[238px] h-[220px] rounded-3xl object-cover"
-            src="/public/img/home/temukan-bank-sampah.png"
+            src="/img/home/temukan-bank-sampah.png"
             alt=""
           />
         </div>
@@ -354,7 +354,7 @@ export default function Home() {
         <div className="flex justify-between gap-8">
           <img
             className="w-[238px] h-[220px] rounded-3xl object-cover"
-            src="/public/img/home/galeri-kerajinan-kreatif.png"
+            src="/img/home/galeri-kerajinan-kreatif.png"
             alt=""
           />
           <div className="border-3 border-bg-secondary rounded-2xl w-full p-5">

@@ -4,17 +4,17 @@ const cardData = [
   {
     id: 1,
     text: "Sampah yang telah disisihkan",
-    imageUrl: "/public/img/home/hero-card_1.png",
+    imageUrl: "/img/home/hero-card_1.png",
   },
   {
     id: 2,
     text: "Relawan Aksi Lingkungan",
-    imageUrl: "/public/img/home/hero-card_2.png",
+    imageUrl: "/img/home/hero-card_2.png",
   },
   {
     id: 3,
     text: "Kerajinan Daur Ulang",
-    imageUrl: "/public/img/home/hero-card_3.png",
+    imageUrl: "/img/home/hero-card_3.png",
   },
 ];
 
@@ -148,14 +148,14 @@ const Carousel = () => {
         onClick={prev}
         className="p-3 rounded-full text-white absolute top-1/2 left-0 transform -translate-y-1/2 z-50"
       >
-        <img className="h-11" src="/public/img/home/previous.png" alt="" />
+        <img className="h-11" src="/img/home/previous.png" alt="" />
       </button>
 
       <button
         onClick={next}
         className="p-3 rounded-full text-white absolute top-1/2 right-0 transform -translate-y-1/2 -translate-x-12 z-50"
       >
-        <img src="/public/img/home/next.png" alt="" />
+        <img src="/img/home/next.png" alt="" />
       </button>
     </div>
   );

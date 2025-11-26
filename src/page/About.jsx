@@ -104,10 +104,10 @@ export default function About() {
               className="w-full h-full"
               src="https://www.youtube.com/embed/U77req16xE4?si=iWDGWJeF07kNArOA"
               title="YouTube video player"
-              frameborder="0"
+              frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              referrerpolicy="strict-origin-when-cross-origin"
-              allowfullscreen
+              referrerPolicy="strict-origin-when-cross-origin"
+              allowFullScreen
             ></iframe>
           </div>
         </div>
@@ -137,7 +137,9 @@ export default function About() {
         </div>
       </div>
 
-      <p className="text-[45px] font-bold text-right -translate-x-42 mt-36">Anggota Tim t-Recx</p>
+      <p className="text-[45px] font-bold text-right -translate-x-42 mt-36">
+        Anggota Tim t-Recx
+      </p>
 
       <div className="flex ">
         <div className="justify-around items-center display: flex  mx-auto">

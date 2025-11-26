@@ -187,7 +187,7 @@ export default function Slider({ initialYear = "2018" }) {
               aria-hidden
             >
               <span className="text-lg">
-                <img src="/public/svg/home/down-arrow.svg" alt="" />
+                <img src="/svg/home/down-arrow.svg" alt="" />
               </span>
             </div>
           </div>
