@@ -1,23 +1,27 @@
-import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import JenisSampahCard from "../../components/ui/JenisSampahCard";
-import DetailJenisSampah from "../../components/ui/DetailJenisSampahCard";
+
 export default function JenisSampah() {
-  const [selectedType, setSelectedType] = useState(null);
+  const navigate = useNavigate();
+
+  const handleSelectType = (type) => {
+    navigate(`/content/jenis-sampah/${type}`);
+  };
+
   const cardsData = [
     {
       title: "Sampah Organik",
-      largeVisualSrc: "/icons/JenisSampah.png", // Ikon kaleng hijau besar (State 1)
-      detailImageSrc: "/images/organic.png", // Foto sisa makanan (State 2)
+      largeVisualSrc: "/icons/JenisSampah.png",
+      detailImageSrc: "/images/organic.png",
       description:
-        "Sampah organik adalah sampah yang berasal dari makhluk hidup dan dapat terurai secara alami melalui proses biologis seperti dekomposisi.",
+        "Sampah organik adalah sampah yang berasal dari makhluk hidup...",
       type: "organik",
     },
     {
       title: "Sampah Anorganik",
-      largeVisualSrc: "/icons/JenisSampah.png", // Ikon kaleng biru besar (State 1)
-      detailImageSrc: "/images/anorganic.png", // Foto plastik/botol (State 2)
-      description:
-        "Sampah anorganik adalah sampah yang tidak dapat terurai secara alami dan umumnya membutuhkan proses daur ulang khusus.",
+      largeVisualSrc: "/icons/JenisSampah.png",
+      detailImageSrc: "/images/anorganic.png",
+      description: "Sampah anorganik adalah sampah yang tidak dapat terurai...",
       type: "anorganik",
     },
   ];
@@ -43,17 +47,16 @@ export default function JenisSampah() {
       </div>
 
       <div className="justify-center items-center display: flex gap-25">
-        <div className="flex justify-center gap-10 ">
+        <div className="flex justify-center gap-10">
           {cardsData.map((card, index) => (
             <JenisSampahCard
               key={index}
               {...card}
-              onSelectType={setSelectedType} // Meneruskan fungsi untuk mengubah state
+              onSelectType={handleSelectType}
             />
           ))}
         </div>
       </div>
-      {selectedType && <DetailJenisSampah type={selectedType} />}
     </div>
   );
 }

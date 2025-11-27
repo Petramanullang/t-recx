@@ -6,6 +6,9 @@ import Content from "./page/Content";
 import Contact from "./page/Contact";
 import JenisSampah from "./page/content/JenisSampah";
 import Footer from "./components/Footer";
+import Organik from "./page/content/jenis-sampah/Organik";
+import Anorganik from "./page/content/jenis-sampah/Anorganik";
+
 
 function App() {
   return (
@@ -17,6 +20,16 @@ function App() {
         <Route path="/content" element={<Content />} />
         <Route path="/content/jenis-sampah" element={<JenisSampah />} />
         <Route path="/contact" element={<Contact />} />
+
+        {/* Sub Page */}
+        <Route
+          path="/content/jenis-sampah/organik"
+          element={<Organik />}
+        />
+        <Route
+          path="/content/jenis-sampah/anorganik"
+          element={<Anorganik />}
+        />
       </Routes>
       <Footer />
     </>

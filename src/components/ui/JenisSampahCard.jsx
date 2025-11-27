@@ -13,12 +13,11 @@ const JenisSampahCard = ({
   const [isHovered, setIsHovered] = useState(false);
 
   const handleDetailClick = () => {
-    onSelectType(type); // Memicu tampilnya detail di bawah kartu
+    onSelectType(type);
   };
 
   return (
     <div
-      // Tetap menggunakan dimensi tetap dan shadow
       className="w-[386px] h-[400px] rounded-2xl overflow-hidden shadow-lg 
                        cursor-pointer group"
       onMouseEnter={() => setIsHovered(true)}
@@ -43,7 +42,7 @@ const JenisSampahCard = ({
           {/* Gambar Foto Kecil di Atas */}
           <div className="relative w-full h-40 rounded-lg overflow-hidden mb-4">
             <img
-              src={detailImageSrc} // Foto Sampah Asli
+              src={detailImageSrc}
               alt={title}
               className="w-full h-full object-cover"
             />
@@ -58,8 +57,7 @@ const JenisSampahCard = ({
           {/* Tombol Lihat Detail */}
           <button
             onClick={handleDetailClick}
-            className="mt-auto px-6 py-2 bg-bg-secondary text-white font-semibold rounded-full 
-                                   hover:bg-teal-700 transition-colors duration-200 shadow-md"
+            className="mt-auto px-6 py-2 bg-bg-secondary text-white font-semibold rounded-full hover:bg-teal-700 transition-colors duration-200 shadow-md"
           >
             Lihat Detail
           </button>
