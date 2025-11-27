@@ -1,12 +1,12 @@
 import React, { useEffect, useRef, useState } from "react";
 
 const dataSampah = {
-  2018: { nyata: 67.1, kelolaMin: 53.7, kelolaMax: 40.2, delta: "20-40%" },
-  2019: { nyata: 68.3, kelolaMin: 54.8, kelolaMax: 41.0, delta: "20-40%" },
-  2020: { nyata: 69.0, kelolaMin: 55.2, kelolaMax: 41.6, delta: "20-40%" },
-  2021: { nyata: 70.4, kelolaMin: 56.3, kelolaMax: 42.5, delta: "20-40%" },
-  2022: { nyata: 71.0, kelolaMin: 57.0, kelolaMax: 43.0, delta: "20-40%" },
-  2023: { nyata: 71.9, kelolaMin: 57.8, kelolaMax: 43.5, delta: "20-40%" },
+  2018: { nyata: 66.5, kelolaMin: 53.2, kelolaMax: 39.9, delta: "20-40%" },
+  2019: { nyata: 67.1, kelolaMin: 53.7, kelolaMax: 40.2, delta: "20-40%" },
+  2020: { nyata: 27.59, kelolaMin: 22.07, kelolaMax: 16.55, delta: "20-40%" },
+  2021: { nyata: 28.59, kelolaMin: 22.87, kelolaMax: 17.15, delta: "20-40%" },
+  2022: { nyata: 38.71, kelolaMin: 30.96, kelolaMax: 23.22, delta: "20-40%" },
+  2023: { nyata: 43.23, kelolaMin: 34.58, kelolaMax: 25.94, delta: "20-40%" },
 };
 
 export default function Slider({ initialYear = "2018" }) {
@@ -45,11 +45,9 @@ export default function Slider({ initialYear = "2018" }) {
     else indicator.style.transition = "left 220ms cubic-bezier(.2,.9,.2,1)";
 
     indicator.style.left = `${center}px`;
-    // small accessible label
     indicator.setAttribute("data-year", year);
   }
 
-  // find nearest year from clientX
   function clientXToNearestYear(clientX) {
     const shell = shellRef.current;
     if (!shell) return years[0];
@@ -70,7 +68,6 @@ export default function Slider({ initialYear = "2018" }) {
     return years[nearestIdx];
   }
 
-  // pointer drag handlers (works for mouse & touch)
   useEffect(() => {
     const shell = shellRef.current;
     const track = trackRef.current;
@@ -116,7 +113,6 @@ export default function Slider({ initialYear = "2018" }) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  // reposition on resize and when active changes
   useEffect(() => {
     function handleResize() {
       moveIndicatorToYear(activeYear, false);
@@ -133,7 +129,6 @@ export default function Slider({ initialYear = "2018" }) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [activeYear]);
 
-  // CTA button label
   const ctaLabel = `Cek total sampah tahun ${activeYear}`;
 
   return (
@@ -158,7 +153,7 @@ export default function Slider({ initialYear = "2018" }) {
           >
             {/* points */}
             {years.map((year, idx) => {
-              const pct = (idx / (years.length - 1)) * 88;
+              const pct = (idx / (years.length - 1)) * 84;
               return (
                 <div
                   key={year}
@@ -227,32 +222,34 @@ export default function Slider({ initialYear = "2018" }) {
         {/* cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6 px-4">
           {/* left card */}
-          <div className="border-2 border-emerald-200 rounded-lg p-5 min-h-[140px]">
-            <div className="flex justify-between items-start">
-              <div>
+          <div className="border border-bg-secondary rounded-lg p-5 min-h-[140px]">
+            <div>
+              <div className="flex justify-between mb-5">
                 <div className="text-sm text-gray-600">Sebelum dikelola</div>
-                <div className="text-xs text-gray-500">ton / Tahun</div>
+                <div className="text-sm text-text-primary font-bold">
+                  ton / Tahun
+                </div>
               </div>
-              <div className="text-3xl font-light text-red-600">
+              <div className="text-3xl text-[#B74343] font-semibold flex justify-center translate-y-5 text-[40px]">
                 {fmt(dataSampah[activeYear].nyata)}
               </div>
             </div>
           </div>
 
           {/* right card */}
-          <div className="border-2 border-emerald-200 rounded-lg p-5 min-h-[140px] flex flex-col justify-between">
-            <div className="flex justify-between items-start">
-              <div>
+          <div className="border border-bg-secondary rounded-lg p-5 pb-3 min-h-[140px] flex flex-col justify-between">
+            <div>
+              <div className="flex justify-between mb-5">
                 <div className="text-sm text-gray-600">Setelah dikelola</div>
-                <div className="text-xs text-gray-500">ton / Tahun</div>
+                <div className="text-sm text-text-primary font-bold">ton / Tahun</div>
               </div>
-              <div className="text-3xl font-light text-emerald-600">
+              <div className="text-3xl font-semibold text-bg-secondary flex justify-center text-[40px] my-8">
                 {fmt(dataSampah[activeYear].kelolaMin)} -{" "}
                 {fmt(dataSampah[activeYear].kelolaMax)}
               </div>
             </div>
 
-            <div className="mt-3 text-sm text-gray-600">
+            <div className="mt-5 text-sm text-gray-600 mx-auto">
               Berkurang sebanyak{" "}
               <span className="font-semibold text-gray-800">
                 {dataSampah[activeYear].delta}
