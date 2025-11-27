@@ -20,7 +20,7 @@ export default function Contact() {
       </div>
 
       <div className="mt-5">
-        <div className="flex ">
+        <div className="flex mx-10">
           <ContactForm />
           <ThanksContact />
         </div>

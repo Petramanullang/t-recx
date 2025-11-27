@@ -1,19 +1,19 @@
 // src/components/ui/JenisSampahCard.jsx
 
 import React, { useState } from "react";
-
+import { useNavigate } from "react-router-dom";
 const JenisSampahCard = ({
   title,
   description,
   largeVisualSrc,
   detailImageSrc,
   type,
-  onSelectType,
 }) => {
   const [isHovered, setIsHovered] = useState(false);
+  const navigate = useNavigate(); 
 
   const handleDetailClick = () => {
-    onSelectType(type); // Memicu tampilnya detail di bawah kartu
+    navigate(`/content/jenis-sampah/${type}`);
   };
 
   return (

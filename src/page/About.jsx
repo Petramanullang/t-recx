@@ -141,8 +141,8 @@ export default function About() {
         Anggota Tim t-Recx
       </p>
 
-      <div className="flex ">
-        <div className="justify-around items-center display: flex  mx-auto">
+      <div className="flex">
+        <div className="justify-around items-center display: flex  mx-25">
           <div className="mb-9">
             <h3 className="text-4xl font-bold text-black mb-3">
               Mengapa Kami?

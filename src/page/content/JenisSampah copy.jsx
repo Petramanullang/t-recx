@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import JenisSampahCard from "../../components/ui/JenisSampahCard";
+import DetailJenisSampah from "../../components/ui/DetailJenisSampahCard";
 export default function JenisSampah() {
 
   const cardsData = [
@@ -9,7 +10,7 @@ export default function JenisSampah() {
       detailImageSrc: "/images/organic.png", // Foto sisa makanan (State 2)
       description:
         "Sampah organik adalah sampah yang berasal dari makhluk hidup dan dapat terurai secara alami melalui proses biologis seperti dekomposisi.",
-      type: "organic",
+      type: "organik",
     },
     {
       title: "Sampah Anorganik",
@@ -17,7 +18,7 @@ export default function JenisSampah() {
       detailImageSrc: "/images/anorganic.png", // Foto plastik/botol (State 2)
       description:
         "Sampah anorganik adalah sampah yang tidak dapat terurai secara alami dan umumnya membutuhkan proses daur ulang khusus.",
-      type: "anorganic",
+      type: "anorganik",
     },
   ];
   return (
