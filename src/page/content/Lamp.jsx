@@ -1,21 +1,21 @@
 import GalleryDetail from "../../components/ui/GalleryDetail";
 
 
-export default function Pen() {
+export default function Lamp() {
          const dataVasBunga = {
-                imageSrc: "/images/penDetail.png",
-                deskripsi: "Kaleng bekas bisa jadi tempat pensil yang rapi dan unik kalau dihias dengan sedikit kreativitas. Kerajinan ini membantu mengurangi sampah logam sekaligus mempercantik meja belajar atau kerja.",
+                 imageSrc: "/images/lampDetail.png",
+                 source: "Sumber : Fuzhou Huikaihua Arts & Crafts Co",
+                deskripsi: "Kertas atau karton bekas bisa jadi lampion cantik untuk dekorasi kamar atau acara kecil. Kerajinannya ringan, hemat bahan, dan mudah dibuat oleh siapa pun.",
                 alat: "Alat dan Bahan",
-                bahan: ["Kaleng susu / kaleng makanan", "Kertas daur ulang / kertas kado",  "Cat akrilik / spidol permanen", "Kuas", "Lem", "Tali rami"],
+                bahan: ["Kertas bekas (kado, majalah, karton tipis)", "Gunting",  "Lem", "Cutter", "Tali Cutter untuk gantungan"],
                 carabuat: "Cara Pembuatan",
-                buat: ["Bersihkan dan keringkan kaleng", "Bungkus kaleng dengan kertas daur ulang, rekatkan menggunakan lem.", "Tambahkan detail cat atau lilitkan tali rami untuk estetika.", "Keringkan, tempat pensil siap digunakan."],
-                source: "Sumber : www.sondralynathome.com",
+                buat: ["Lipat kertas menjadi dua.", "Buat potongan vertikal kecil menggunakan cutter.", "Buka lipatan, bentuk menjadi tabung, lalu lem kedua sisinya.", "Tambahkan strip kertas di atas sebagai pegangan.", "Lampion siap digantung!"],
         };
         return (
                 <div className="">
                         <div className="relative h-[300px] flex flex-col justify-end">
                                 <div className="flex text-center items-center justify-center">
-                                        <h3 className="font-bold text-[45px]  text-[#121F0B]">Wadah Pensil dari Kaleng Bekas</h3>
+                                        <h3 className="font-bold text-[45px]  text-[#121F0B]">Lampion dari Kertas / Karton Bekas</h3>
                                 </div>
                         </div>
                         <GalleryDetail
@@ -29,7 +29,7 @@ export default function Pen() {
                                 buat={dataVasBunga.buat}
                         />
                          <div>
-                                <img src="/icons/pen.png" className="w-170 ms-190 mt-30" alt="" />
+                                <img src="/icons/lampion.png" className="w-170 ms-190 mt-30" alt="" />
                         </div>
                 </div>
         );

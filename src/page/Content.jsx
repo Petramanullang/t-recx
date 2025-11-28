@@ -76,10 +76,13 @@ export default function Content() {
             </div>
           </div>
         </div>
-        <div
+
+        <Link
+          to="/content/galery" // 🌟 Tujuan Navigasi Anda 🌟
           className="group bg-text-title hover:bg-[#3E7F61] duration-200"
-          style={{ borderRadius: "25px", width: "386px", height: "400px" }}
+          style={{ borderRadius: "25px", width: "386px", height: "400px", textDecoration: 'none' }} // textDecoration: 'none' untuk menghilangkan garis bawah default Link
         >
+
           <div className="justify-center items-center">
             <img
               src="/images/content3.png"
@@ -97,7 +100,8 @@ export default function Content() {
               </p>
             </div>
           </div>
-        </div>
+
+        </Link>
       </div>
     </div>
   );

@@ -3,44 +3,52 @@ const craftData = [
         {
                 title: "Vas Bunga",
                 description: "Botol plastik bekas yang biasanya jadi sampah ternyata bisa disulap jadi vas bunga cantik dan estetik. Kerajinan ini mudah dibuat dan cocok sebagai...",
-                imageSrc: "/images/vas.png"
+                imageSrc: "/images/vas.png",
+                slug: "vas",
         },
         {
                 title: "Wadah Pensil",
                 description: "Kaleng bekas bisa jadi tempat pensil yang rapi dan unik kalau dihias dengan sedikit kreativitas. Kerajinan ini membantu mengurangi sampah...",
-                imageSrc: "/images/pen.png"
+                imageSrc: "/images/pen.png",
+                slug: "pen",
         },
         {
                 title: "Pot Tanaman Mini",
                 description: "Cup plastik bekas minuman bisa kamu ubah menjadi pot tanaman mini yang lucu dan dekoratif. Cocok untuk meja belajar, rak buku, atau hadiah kecil...",
-                imageSrc: "/images/plant.png"
+                imageSrc: "/images/plant.png",
+                slug: "plant",
         },
         {
                 title: "Dompet Koin",
                 description: "Kemasan kopi tebal punya struktur kuat yang pas untuk dijadikan dompet koin fungsional. Dengan sedikit lipatan dan resteting, sampah kemasan...",
-                imageSrc: "/images/wallet.png"
+                imageSrc: "/images/wallet.png",
+                slug: "wallet",
         },
 
 
         {
                 title: "Lampion",
                 description: "Kertas atau karton bekas bisa jadi lampion cantik untuk dekorasi kamar atau acara kecil. Kerajinannya ringan, hemat bahan, dan mudah dibuat...",
-                imageSrc: "/images/lamp.png"
+                imageSrc: "/images/lamp.png",
+                slug: "lamp",
         },
         {
                 title: "Hiasan Dinding",
                 description: "CD lama yang sudah tidak terpakai masih bisa bersinar lewat kerajinan mozaik dinding. Dengan pantulan cahaya dari pecahannya, hasil...",
-                imageSrc: "/images/wall.png"
+                imageSrc: "/images/wall.png",
+                slug: "wall",
         },
         {
                 title: "Keranjang Mini",
                 description: "Koran bekas yang biasanya menumpuk di rumah bisa diubah menjadi keranjang mini yang kuat dan multifungsi. Teknik anyamannya ....",
-                imageSrc: "/images/bucket.png"
+                imageSrc: "/images/bucket.png",
+                slug: "bucket",
         },
         {
                 title: "Organizer Meja",
                 description: "Kardus bekas yang sering kita anggap tidak berguna ternyata bisa diubah menjadi organizer meja yang rapi dan fungsional. Dengan sedikit potongan",
-                imageSrc: "/images/table.png"
+                imageSrc: "/images/table.png",
+                slug: "table",
         },
 ];
 export default function Gallery() {
@@ -76,6 +84,7 @@ export default function Gallery() {
                                                                 title={craft.title}
                                                                 description={craft.description}
                                                                 imageSrc={craft.imageSrc}
+                                                                slug={craft.slug}
                                                         />
                                                 ))}
                                         </div>
