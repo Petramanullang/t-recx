@@ -21,62 +21,103 @@ export default function Home() {
         <img
           src="/img/home/bg-hero.png"
           alt="hero"
-          className="absolute inset-0 w-full h-screen object-cover brightness-45"
+          className="absolute inset-0 w-full h-[120vh] lg:h-screen object-cover brightness-45"
         />
-        <div className="absolute mt-42 inset-0 mx-auto px-6 lg:px-12 flex items-center">
-          <div className="w-full lg:w-1/2 text-white">
+        <div className="absolute lg:mt-42 inset-0 mx-10 lg:mx-auto lg:px-12 flex items-center">
+          <div className="w-full lg:w-1/2 text-white -translate-y-24 lg:translate-0">
+            {/* MOBILE MASCOT */}
+            <div className="absolute -translate-x-3 translate-y-3 block lg:hidden">
+              <p className="text-text-secondary text-bold text-[10px] translate-y-5.5 translate-x-7">
+                Mari, peduli lingkungan! Kelola sampah dengan bijak!
+              </p>
+              <img
+                className="w-[90%] ml-4"
+                src="/svg/home/mobile/Mascot-text.svg"
+                alt=""
+              />
+              <img
+                className="translate-x-[280px] -translate-y-6"
+                src="/svg/home/mobile/Mascot.svg"
+                alt=""
+              />
+            </div>
+
+            <div className="absolute block lg:hidden w-1/2 pl-15 mt-20 -translate-y-5">
+              <Carousel />
+            </div>
+
             <h1 className="text-3xl md:text-[65px] font-extrabold leading-tight mt-16 text-text-title">
               Lingkungan bersih,
               <br /> nyaman terkendali
             </h1>
-            <p className="mt-4 text-sm md:text-[20px] max-w-xl text-text-secondary">
+
+            <p className=" mt-4 text-sm md:text-[18px] w-full lg:max-w-xxl text-text-secondary absolute lg:static translate-y-[480px] lg:translate-y-0 text-center lg:text-left lg:w-auto px-2 lg:px-0">
               Temukan cara mudah memilah sampah, lokasi bank sampah, hingga
               inspirasi daur ulang yang bisa kamu lakukan sekarang juga.
             </p>
-            <div className="mt-6 flex gap-3">
-              <button className="bg-bg-secondary rounded-full hover:bg-green-700 px-4 py-2 font-bold text-white text-lg">
+
+            <div className="absolute lg:static lg:mt-6 flex gap-3 translate-x-23 lg:translate-x-0 translate-y-[580px] lg:translate-y-0">
+              <button className="bg-bg-primary lg:bg-bg-secondary rounded-full hover:bg-green-700 px-3 lg:px-4 py-2 lg:font-bold text-white text-[11px] lg:text-lg">
                 Pelajari lebih lanjut
               </button>
             </div>
+
+            {/* DESKTOP MASCOT*/}
             <img
-              className="absolute top-0 translate-x-32 h-56"
+              className="absolute top-0 lg:translate-x-32 h-32 lg:h-56 hidden lg:block"
               src="/img/home/mascot-1.png"
               alt=""
             />
           </div>
 
           {/* Right Carousel */}
-          <div className="hidden lg:block w-1/2 pl-8 mt-20">
+          <div className="hidden lg:block w-1/2 pl-15 mt-20">
             <Carousel />
           </div>
         </div>
       </section>
+
       {/* MAIN CONTENT */}
-      <section className="mx-10 mt-72">
-        <div className="flex justify-between">
-          <p className="text-sm text-text-primary text-[22px] translate-y-6">
+      <section className="mx-4 lg:mx-10 mt-[400px] lg:mt-72">
+        <div className="lg:flex justify-between">
+          {/* Mobile */}
+          <h2 className="text-[20px] font-semibold mt-4 text-center lg:hidden">
+            Masalah lingkungan yang kian meresahkan masyarakat
+          </h2>
+
+          <p className="text-xs leading-8 text-text-gray lg:text-text-primary translate-y-6 lg:hidden">
+            Penumpukan sampah yang terus bertambah kini menjadi ancaman nyata
+            bagi lingkungan dan kehidupan sehari-hari.
+          </p>
+
+          {/* Desktop */}
+          <p className="text-xs lg:text-base leading-8 text-text-gray lg:text-text-primary translate-y-6 hidden lg:block">
             Penumpukan sampah yang terus bertambah kini <br /> menjadi ancaman
             nyata bagi lingkungan dan kehidupan <br /> sehari-hari.
           </p>
-          <h2 className="text-[42px] font-semibold mt-4 text-right">
+          <h2 className="text-[42px] font-semibold mt-4 text-right hidden lg:block">
             Masalah lingkungan yang <br /> kian meresahkan <br /> masyarakat
           </h2>
         </div>
 
-        <div className="bg-white rounded-2xl flex justify-between gap-28 mt-24">
+        <div className="bg-white rounded-2xl lg:flex justify-between gap-10 mt-24">
           {/* Left column: stats + image */}
 
-          <div className="-translate-y-24">
-            <div className="bg-bg-secondary p-4 z-10 relative flex items-center w-[70%] mx-auto translate-y-4">
-              <div className="text-5xl font-bold text-text-secondary">300</div>
-              <div className="text-[16px] text-text-secondary ml-2">
+          <div className="-translate-y-16 lg:-translate-y-24">
+            <div className="bg-bg-secondary p-2 lg:p-4 z-10 relative flex items-center w-[320px] lg:w-[70%] mx-auto translate-y-4">
+              <div className="text-lg lg:text-5xl font-bold text-text-secondary">
+                300
+              </div>
+              <div className="text-[10px] lg:text-[16px] text-text-secondary ml-2">
                 ton sampah <br /> diproduksi dunia <br /> setiap tahun
               </div>
 
               <div className="border-l-3 border-white h-20 mx-5"></div>
 
-              <div className="text-5xl font-bold text-text-secondary">500</div>
-              <div className="text-[16px] text-text-secondary ml-2">
+              <div className="text-lg lg:text-5xl font-bold text-text-secondary">
+                500
+              </div>
+              <div className="text-[10px] lg:text-[16px] text-text-secondary ml-2">
                 ton sampah per <br /> hari menumpuk <br /> tanpa dikelola <br />{" "}
                 dengan benar
               </div>
@@ -85,29 +126,30 @@ export default function Home() {
             <img
               src="/img/home/gunung-sampah.png"
               alt="garbage"
-              className="min-w-[812px] h-[514px] object-cover rounded-xl shadow-md -translate-y-10 z-10"
+              className="lg:min-w-[812px] lg:h-[514px] object-cover rounded-3xl lg:rounded-xl shadow-md -translate-y-10 z-10"
             />
-            <p className="text-center text-text-gray -translate-y-7">
+            <p className="text-xs lg:text-base text-center text-text-gray -translate-y-7">
               Sumber : detik.com
             </p>
           </div>
 
           {/* Right column */}
-          <div className="flex w-full ml-10 -translate-y-5 translate-x-5">
-            <div className="border-l-6 border-dotted border-bg-secondary h-[60%] translate-y-3"></div>
+          <div className="border-l-6 border-dotted border-bg-secondary lg:border-none h-[40%] absolute -translate-y-10 translate-x-8 lg:hidden"></div>
+          <div className="lg:flex w-full ml-5 lg:ml-10 -translate-y-15 lg:-translate-y-5 translate-x-5 ">
+            <div className="border-l-6 border-dotted border-bg-secondary h-[60%] lg:translate-y-3 hidden lg:block"></div>
 
-            <div className="space-y-6  pl-5">
+            <div className="space-y-6 pl-5">
               <div className="relative w-full">
                 <img
                   className="absolute -translate-x-10 top-2.5 z-10 -ml-3.5 h-15 w-15 p-[18px] flex justify-center rounded-full bg-bg-secondary"
                   src="/svg/home/trash-outline.svg"
                   alt=""
                 />
-                <div className="ml-6 translate-y-1">
-                  <h4 className="font-bold text-3xl">
-                    Sistem Pemilahan yang <br /> Buruk
+                <div className="ml-4 translate-y-3 lg:translate-y-1">
+                  <h4 className="font-bold text-xl lg:text-3xl">
+                    Sistem Pemilahan yang Buruk
                   </h4>
-                  <p className="mt-2 max-w-screen-sm text-xl text-gray-500">
+                  <p className="mt-2 max-w-screen-sm text-sm lg:text-xl text-gray-500">
                     Sebagian besar masyarakat masih <br /> mencampur sampah
                     organik dan anorganik <br /> sehingga menyulitkan proses
                     daur ulang.
@@ -120,11 +162,11 @@ export default function Home() {
                   src="/svg/home/warning-line.svg"
                   alt=""
                 />
-                <div className="ml-6 translate-y-2">
-                  <h4 className="font-bold text-3xl">
+                <div className="ml-4 translate-y-5 lg:translate-y-1">
+                  <h4 className="font-bold text-xl lg:text-3xl">
                     Minimnya Fasilitas <br /> Pengelolaan
                   </h4>
-                  <p className="mt-2 max-w-screen-sm text-xl text-gray-500">
+                  <p className="mt-2 max-w-screen-sm text-sm lg:text-xl text-gray-500">
                     Tidak semua wilayah memiliki bank sampah <br /> atau drop
                     point yang mudah diakses.
                   </p>
@@ -136,11 +178,11 @@ export default function Home() {
                   src="/svg/home/solid_disease.svg"
                   alt=""
                 />
-                <div className="ml-6 mt-10 translate-y-2">
-                  <h4 className="font-bold text-3xl">
+                <div className="ml-6 mt-10 translate-y-5 lg:translate-y-2">
+                  <h4 className="font-bold text-xl lg:text-3xl">
                     Kurangnya Edukasi dan <br /> Kesadaran
                   </h4>
-                  <p className="mt-2 max-w-screen-sm text-xl text-gray-500">
+                  <p className="mt-2 max-w-screen-sm text-sm lg:text-xl text-gray-500">
                     Sebagian besar sampah sebenarnya bisa <br /> diolah, namun
                     informasi mengenai cara <br /> pengelolaannya masih belum
                     merata.
@@ -151,62 +193,107 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <div className="w-full h-[189px] bg-bg-secondary flex justify-between items-center pl-16 pr-36">
+      <div className="w-full h-[70px] lg:h-[189px] bg-bg-secondary flex justify-between items-center lg:pl-16 lg:pr-36 px-3">
         <img
-          className="translate-x-20 translate-y-3"
+          className="lg:translate-x-20 lg:translate-y-3 h-36 lg:h-[200%]"
           src="/img/home/mascot-2.png"
           alt=""
         />
-        <p className="text-[64px] text-text-secondary font-bold -translate-x-26 translate-y-2">
+        <p className="text-[20px] lg:text-[60px] text-text-secondary font-bold lg:-translate-x-17 lg:translate-y-2">
           Angka Sampah di Indonesia
         </p>
       </div>
-      <div className="mt-20 mx-24">
-        <p className="text-text-gray text-[22px]/12">
-          Indonesia berada di posisi kelima dunia penghasil sampah plastik salah
-          kelola. Data ini berdasarkan laporan World Bank tentang <br />{" "}
-          mismanaged plastic waste, yaitu plastik yang tidak tertangani dengan
-          baik dan berpotensi mencemari sungai dan laut. Setiap <br /> tahun,
-          Indonesia menghasilkan sekitar 3,2 juta ton sampah plastik.Dari jumlah
-          ini, sekitar 620 ribu ton masuk kategori risiko tinggi <br />{" "}
-          mencemari laut menjadikan Indonesia salah satu negara yang paling
-          rentan terhadap krisis plastik.
+      {/* MOBILE */}
+      <div className="lg:hidden mt-5">
+        <h3 className="font-semibold text-lg lg:text-3xl ml-[50px]">
+          Ranking sampah dunia per tahun{" "}
+        </h3>
+
+        <div className="mt-5 mb-2 rounded-[18px] border-2 border-bg-secondary mx-10 p-2 lg:p-6 bg-white shadow-md">
+          {/* Header */}
+          <div className="bg-[#AEE88C66] rounded-xl w-full px-3 py-3 flex justify-between mb-5">
+            <p className="text-sm lg:text-xl font-bold">Urutan</p>
+            <p className="text-sm lg:text-xl font-bold">Negara</p>
+            <p className="text-sm lg:text-xl font-bold">Jumlah Sampah</p>
+          </div>
+
+          {/* Rows */}
+          {data.map((item, i) => {
+            const colorByRank = {
+              5: "bg-[#E38282]",
+            };
+
+            return (
+              <div
+                key={i}
+                className={`border-2 border-bg-secondary rounded-xl w-full px-5 lg:px-10 py-1 flex justify-between mb-3 ${
+                  colorByRank[item.rank] || "bg-white"
+                }`}
+              >
+                <p className="text-sm lg:text-xl font-bold">{item.rank}</p>
+                <p className="text-sm lg:text-xl font-bold -translate-x-3">
+                  {item.country}
+                </p>
+                <p className="text-sm lg:text-xl font-bold">{item.amount}</p>
+              </div>
+            );
+          })}
+        </div>
+        <p className="text-text-gray text-[10px] lg:text-base mx-10 lg:mx-3 text-center">
+          Berdasarkan data World Bank, laporan dikompilasi oleh Jambeck et al.,
+          dan Tim Nasional Penanganan Sampah Laut
         </p>
-        <p className="mt-5 text-text-gray text-[22px]/12">
+      </div>
+      <div className="mt-8 lg:mt-20 mx-5 lg:mx-24">
+        <p className="text-text-gray text-xs leading-6 lg:text-[20px]/12">
+          Indonesia berada di posisi kelima dunia penghasil sampah plastik salah
+          kelola. Data ini berdasarkan laporan World Bank tentang mismanaged
+          plastic waste, yaitu plastik yang tidak tertangani dengan baik dan
+          berpotensi mencemari sungai dan laut. Setiap tahun, Indonesia
+          menghasilkan sekitar 3,2 juta ton sampah plastik.Dari jumlah ini,
+          sekitar 620 ribu ton masuk kategori risiko tinggi mencemari laut
+          menjadikan Indonesia salah satu negara yang paling rentan terhadap
+          krisis plastik.
+        </p>
+        <p className="text-text-gray text-xs leading-6 lg:text-[20px]/12 mt-4">
           UNDP dan World Bank pula mencatat bahwa negara yang menerapkan sistem
-          pengelolaan sampah terpadu dapat menurunkan <br /> sampah masuk TPA
-          sebesar 20–40%. Untuk memahami lebih lanjut, mari coba simulasikan
-          total sampah di Indonesia !
+          pengelolaan sampah terpadu dapat menurunkan sampah masuk TPA sebesar
+          20-40%. Untuk memahami lebih lanjut, mari coba simulasikan total
+          sampah di Indonesia !
         </p>
       </div>
       {/* Slider */}
-      <div className="flex justify-center mt-16">
+      <div className="flex justify-center lg:mt-16">
         <div>
           <Slider />
-
-          <div className="w-[683px] mx-auto mt-2 mb-32 rounded-[18px] border-2 border-bg-secondary p-6 bg-white shadow-md">
+          <div className="lg:w-[595px] mx-7 lg:mx-auto mt-2 mb-32 rounded-[18px] border-2 border-bg-secondary p-6 bg-white shadow-md">
             <div className="flex items-center gap-6">
-              <img src="/img/home/progress-bar-circle.png" alt="" />
+              <img
+                className="h-20"
+                src="/img/home/progress-bar-circle.png"
+                alt=""
+              />
               <div>
-                <h3 className="font-bold text-5xl">20 - 40%</h3>
-                <p className="text-text-gray leading-11 my-5 text-[22px]">
+                <h3 className="font-bold text-lg lg:text-5xl">20 - 40%</h3>
+                <p className="text-text-gray lg:leading-11 lg:my-5 text-[9px] lg:text-[20px]">
                   Sampah berkurang dan dikelola dengan bijak
                 </p>
               </div>
               <img
-                className="w-[133px] h-[200px]"
+                className=" w-[60px] lg:w-[133px] h-[90px] lg:h-[200px]"
                 src="/svg/home/mascot-5.svg"
                 alt=""
               />
             </div>
 
-            <div className="w-full bg-[#EEEEEE] border-2 border-bg-secondary rounded-full h-3">
+            <div className="w-full bg-[#EEEEEE] border-2 border-bg-secondary rounded-full h-3 mt-5 lg:mt-0">
               <div className="bg-bg-secondary h-2.5 rounded-full w-[30%] -translate-x-[0.5px] -translate-y-[0.5px]"></div>
             </div>
           </div>
         </div>
 
-        <div>
+        {/* DESKTOP */}
+        <div className="hidden lg:block">
           <h3 className="font-semibold text-3xl ml-[50px]">
             Ranking sampah dunia per tahun{" "}
           </h3>
@@ -241,14 +328,14 @@ export default function Home() {
               );
             })}
           </div>
-          <p className="text-text-gray text-base">
+          <p className="text-text-gray text-base mx-3 text-center">
             Berdasarkan data World Bank, laporan dikompilasi oleh Jambeck et
             al., dan Tim <br /> Nasional Penanganan Sampah Laut
           </p>
         </div>
       </div>
 
-      <div className="w-full h-[189px] bg-bg-secondary flex justify-center items-center pl-16 pr-36 mt-22">
+      <div className="w-full h-[70px] lg:h-[189px] bg-bg-secondary flex justify-between items-center lg:pl-16 lg:pr-36 px-3">
         <p className="text-[64px] text-text-secondary font-bold text-center">
           Bersama t-Recx
         </p>

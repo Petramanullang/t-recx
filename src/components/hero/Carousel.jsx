@@ -21,10 +21,18 @@ const cardData = [
 const Carousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const containerRef = useRef(null);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkWidth = () => setIsMobile(window.innerWidth <= 768);
+    checkWidth();
+    window.addEventListener("resize", checkWidth);
+    return () => window.removeEventListener("resize", checkWidth);
+  }, []);
 
   const CARD_WIDTH = 360;
   const CARD_HEIGHT = 420;
-  const GAP = 100;
+  const GAP = isMobile ? 30 : 100;
   const DEPTH_STEP = 60;
   const SCALE_STEP = 0.08;
 
@@ -54,21 +62,17 @@ const Carousel = () => {
       >
         <div style={{ position: "relative", height: "100%", width: "100%" }}>
           {cardData.map((card, index) => {
-            // === NEW: gunakan distance searah jarum jam (selalu >= 0) ===
             const n = cardData.length;
-            const distance = (index - currentIndex + n) % n; // 0..n-1
-            const displayOffset = distance; // 0 => aktif, 1..n-1 => kanan berurutan
+            const distance = (index - currentIndex + n) % n;
+            const displayOffset = distance;
 
-            // batasi render untuk perf
             if (displayOffset > 4 && displayOffset !== 0) return null;
 
-            // transformasi: semua non-aktif ke kanan (positif)
-            const translateX = displayOffset * GAP; // selalu ke kanan
-            const translateZ = -displayOffset * DEPTH_STEP; // semakin jauh ke belakang
-            const scale = Math.max(0.5, 1 - displayOffset * SCALE_STEP); // mengecil sesuai jarak
-            const rotateY = -displayOffset * 6; // miring sedikit ke kiri untuk semua kanan-back
+            const translateX = displayOffset * GAP;
+            const translateZ = -displayOffset * DEPTH_STEP;
+            const scale = Math.max(0.5, 1 - displayOffset * SCALE_STEP);
+            const rotateY = -displayOffset * 6;
 
-            // zIndex: aktif paling depan, lalu urutan kanan (1 paling dekat, 2 lebih jauh)
             const baseZ = 1000;
             const zIndex = baseZ - displayOffset * 10;
 
@@ -84,10 +88,10 @@ const Carousel = () => {
               <div
                 key={card.id}
                 onClick={() => setCurrentIndex(index)}
+                className="left-35 lg:left-[40%] translate-y-20 lg:translate-y-0"
                 style={{
                   position: "absolute",
                   top: "50%",
-                  left: "40%", // Jarak untuk kartu
                   width: `${CARD_WIDTH}px`,
                   height: `${CARD_HEIGHT}px`,
                   transform,
@@ -102,9 +106,8 @@ const Carousel = () => {
                 }}
               >
                 <div
+                className="w-[270px] lg:w-[285px] h-[90%] lg:h-full"
                   style={{
-                    width: "285px",
-                    height: "100%",
                     borderRadius: 14,
                     overflow: "hidden",
                     boxShadow:
@@ -136,8 +139,8 @@ const Carousel = () => {
       </div>
 
       {/* teks bawah */}
-      <div className="absolute inset-x-0 bottom-0 -translate-x-27 -translate-y-13 text-center pt-2">
-        <p className="text-white text-lg font-semibold bg-transparent inline-block px-4 py-1 rounded">
+      <div className="absolute inset-x-0 bottom-0 -translate-x-15 lg:-translate-x-27 -translate-y-5 lg:-translate-y-13 text-center pt-2 w-[300px] lg:w-full">
+        <p className="text-white text-xs lg:text-lg font-semibold bg-transparent inline-block px-4 py-1 rounded">
           {cardData[currentIndex].text}
         </p>
         <div className="w-[40%] mx-auto border-b-4 border-white mt-1"></div>
@@ -146,16 +149,16 @@ const Carousel = () => {
       {/* tombol nav */}
       <button
         onClick={prev}
-        className="p-3 rounded-full text-white absolute top-1/2 left-0 transform -translate-y-1/2 z-50"
+        className="p-3 rounded-full text-white absolute top-1/2 left-0 transform lg:-translate-y-1/2 z-50 -translate-x-23 lg:translate-x-0"
       >
-        <img className="h-11" src="/img/home/previous.png" alt="" />
+        <img className="h-8 lg:h-11" src="/img/home/previous.png" alt="" />
       </button>
 
       <button
         onClick={next}
-        className="p-3 rounded-full text-white absolute top-1/2 right-0 transform -translate-y-1/2 -translate-x-12 z-50"
+        className="p-3 rounded-full text-white absolute top-1/2 right-0 transform lg:-translate-y-1/2 translate-x-48 lg:-translate-x-2 z-50 "
       >
-        <img src="/img/home/next.png" alt="" />
+        <img className="h-8 lg:h-11" src="/img/home/next.png" alt="" />
       </button>
     </div>
   );

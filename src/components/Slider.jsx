@@ -34,6 +34,7 @@ export default function Slider({ initialYear = "2018" }) {
     if (!shell || !indicator || !point) return;
     const shellRect = shell.getBoundingClientRect();
     const pointRect = point.getBoundingClientRect();
+
     // center relative to shell
     let center = pointRect.left - shellRect.left + pointRect.width / 2;
 
@@ -129,26 +130,36 @@ export default function Slider({ initialYear = "2018" }) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [activeYear]);
 
-  const ctaLabel = `Cek total sampah tahun ${activeYear}`;
+  // next year logic
+  const getNextYear = (year) => {
+    const idx = years.indexOf(String(year));
+    const nextIdx = Math.min(idx + 1, years.length - 1);
+    return years[nextIdx];
+  };
+  const nextYear = getNextYear(activeYear);
+  const isLastYear = nextYear === activeYear;
+  const ctaLabel = isLastYear
+    ? `Tidak ada tahun berikutnya`
+    : `Cek total sampah tahun ${nextYear}`;
 
   return (
-    <div className="max-w-4xl mx-auto p-6">
-      <div className="rounded-[18px] border-2 border-bg-secondary p-6 bg-white shadow-md">
-        <div className="text-center mb-15">
-          <h2 className="text-2xl font-semibold text-gray-800">
+    <div className="lg:max-w-4xl lg:mx-auto p-6">
+      <div className="rounded-3xl lg:rounded-[18px] border-2 border-bg-secondary p-2 lg:p-6 bg-white shadow-md">
+        <div className="text-center mb-5 lg:mb-15">
+          <h2 className="lg:text-2xl font-semibold text-gray-800">
             Simulasi hitung total sampah di Indonesia
           </h2>
-          <p className="text-base text-text-gray mt-1">
+          <p className="text-xs lg:text-base text-text-gray mt-1">
             Masukkan tahun yang ingin disimulasikan
           </p>
         </div>
 
         {/* slider shell */}
-        <div ref={shellRef} className="relative mt-6">
+        <div ref={shellRef} className="relative lg:mt-6">
           {/* track */}
           <div
             ref={trackRef}
-            className="relative h-3 rounded-full bg-gray-200 mx-4"
+            className="relative h-2 lg:h-3 rounded-full bg-gray-200 mx-4"
             aria-hidden
           >
             {/* points */}
@@ -170,30 +181,33 @@ export default function Slider({ initialYear = "2018" }) {
             {/* draggable indicator */}
             <div
               ref={indicatorRef}
-              className="absolute top-0 -translate-y-1/2 w-9 h-9 rounded-full flex items-center justify-center shadow-md"
+              className="absolute top-0 -translate-y-3 w-9 h-9 rounded-full flex items-center justify-center"
               style={{
                 left: 0,
                 transform: "translate(-100%)",
-                background: "#2f7f5a",
                 color: "#fff",
                 transition: "left 220ms cubic-bezier(.2,.9,.2,1)",
                 zIndex: 30,
               }}
               aria-hidden
             >
-              <span className="text-lg">
-                <img src="/svg/home/down-arrow.svg" alt="" />
+              <span>
+                <img
+                  className="h-6 lg:h-full"
+                  src="/svg/home/down-arrow.svg"
+                  alt=""
+                />
               </span>
             </div>
           </div>
 
           {/* year labels */}
-          <div className="flex justify-between mt-5 px-10 pl-12 text-sm select-none">
+          <div className="flex justify-between mt-5 px-10 pl-12 lg:text-sm select-none">
             {years.map((y) => (
               <button
                 key={y}
                 onClick={() => setActiveYear(y)}
-                className={`text-base focus:outline-none ${
+                className={`text-[10px] lg:text-base focus:outline-none ${
                   activeYear === y
                     ? "text-gray-800 font-semibold"
                     : "text-gray-400"
@@ -208,48 +222,54 @@ export default function Slider({ initialYear = "2018" }) {
         {/* CTA */}
         <div className="flex justify-end mt-6 px-4">
           <button
-            className="bg-emerald-600 text-white px-6 py-3 rounded-full shadow-md hover:shadow-lg transition"
+            className={`bg-emerald-600 text-white text-xs lg:text-base px-2 lg:px-6 py-3 rounded-full shadow-md hover:shadow-lg transition disabled:opacity-50 disabled:cursor-not-allowed`}
             type="button"
             onClick={() => {
-              // placeholder behaviour - you can replace with real action
-              alert(`Menampilkan data tahun ${activeYear}`);
+              if (!isLastYear) setActiveYear(nextYear);
             }}
+            disabled={isLastYear}
           >
             {ctaLabel}
           </button>
         </div>
 
         {/* cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6 px-4">
+        <div className="grid grid-cols-2 md:grid-cols-2 gap-4 mt-6 px-4">
           {/* left card */}
-          <div className="border border-bg-secondary rounded-lg p-5 min-h-[140px]">
+          <div className="border border-bg-secondary rounded-3xl lg:rounded-lg p-3 lg:p-5 max-h-[120px] lg:max-h-full lg:min-h-[140px]">
             <div>
               <div className="flex justify-between mb-5">
-                <div className="text-sm text-gray-600">Sebelum dikelola</div>
-                <div className="text-sm text-text-primary font-bold">
+                <div className="text-[10px] lg:text-sm text-gray-600">
+                  Sebelum dikelola
+                </div>
+                <div className="text-[10px] lg:text-sm text-text-primary font-bold">
                   ton / Tahun
                 </div>
               </div>
-              <div className="text-3xl text-[#B74343] font-semibold flex justify-center translate-y-5 text-[40px]">
+              <div className="text-2xl lg:text-[35px] text-[#B74343] font-semibold flex justify-center lg:translate-y-5">
                 {fmt(dataSampah[activeYear].nyata)}
               </div>
             </div>
           </div>
 
           {/* right card */}
-          <div className="border border-bg-secondary rounded-lg p-5 pb-3 min-h-[140px] flex flex-col justify-between">
+          <div className="border border-bg-secondary rounded-3xl lg:rounded-lg p-3 lg:p-5 pb-3 max-h-[120px] lg:max-h-full lg:min-h-[140px] flex flex-col justify-between">
             <div>
               <div className="flex justify-between mb-5">
-                <div className="text-sm text-gray-600">Setelah dikelola</div>
-                <div className="text-sm text-text-primary font-bold">ton / Tahun</div>
+                <div className="text-[10px] lg:text-sm text-gray-600">
+                  Sebelum dikelola
+                </div>
+                <div className="text-[10px] lg:text-sm text-text-primary font-bold">
+                  ton / Tahun
+                </div>
               </div>
-              <div className="text-3xl font-semibold text-bg-secondary flex justify-center text-[40px] my-8">
-                {fmt(dataSampah[activeYear].kelolaMin)} -{" "}
+              <div className="text-xl lg:text-[35px] font-semibold text-bg-secondary flex justify-center lg:my-8">
+                {fmt(dataSampah[activeYear].kelolaMin)} -
                 {fmt(dataSampah[activeYear].kelolaMax)}
               </div>
             </div>
 
-            <div className="mt-5 text-sm text-gray-600 mx-auto">
+            <div className="lg:mt-5 text-[7px] lg:text-sm text-gray-600 mx-auto">
               Berkurang sebanyak{" "}
               <span className="font-semibold text-gray-800">
                 {dataSampah[activeYear].delta}
@@ -260,7 +280,7 @@ export default function Slider({ initialYear = "2018" }) {
       </div>
 
       {/* source */}
-      <div className="text-center text-xs text-gray-500 mt-6">
+      <div className="text-center text-xs text-gray-500 mt-6 hidden lg:block">
         Sumber : SIPSN
       </div>
     </div>
