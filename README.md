@@ -9,10 +9,9 @@ t-Recx adalah sebuah website yang dikembangkan oleh tim kreatif muda yang peduli
 
 ## **Deskripsi Website**
 
-Website t-Recx menghadirkan pengalaman interaktif dengan tampilan modern, ringan, dan responsif. Dibangun menggunakan ReactJS, project ini mengusung struktur komponen yang mudah dipahami dan dikembangkan.
+Website t-Recx menghadirkan pengalaman interaktif dengan tampilan modern, dan ringan. Dibangun menggunakan ReactJS, project ini mengusung struktur komponen yang mudah dipahami dan dikembangkan.
 
 **Fitur utama:**
-- Navigasi responsif termasuk mobile burger menu  
 - Halaman edukasi jenis-jenis sampah  
 - UI modern dan clean  
 - Komponen modular  
